@@ -1,5 +1,7 @@
 import logging
 from os import path as osp
+from pathlib import Path
+
 
 def init_logger(log_name, log_path=None):
     logger = logging.getLogger(log_name)
@@ -20,3 +22,7 @@ def init_logger(log_name, log_path=None):
 
     logger.info(f'Initialization Success: {log_name}')
     return logger
+
+def init_directories(*dirs):
+    for dir in dirs:
+        Path(dir).mkdir(parents=True, exist_ok=True)
