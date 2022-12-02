@@ -6,10 +6,8 @@ from pathlib import Path
 from human_body_prior.body_model.body_model import BodyModel
 from human_body_prior.tools.omni_tools import copy2cpu as c2c
 
-from amass.data_preprocess import get_data_loaders, data_logger
-from utility.constants import Defaults, DataPaths, Splits
-from utility.utils import init_logger
-
+from mesh_utils.amass.data_preprocess import get_data_loaders, data_logger
+from mesh_utils.utility.constants import Defaults, DataPaths, Splits
 
 
 class PointCloudGenerator:

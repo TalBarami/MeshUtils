@@ -1,4 +1,5 @@
 import logging
+import pickle
 from os import path as osp
 from pathlib import Path
 
@@ -26,3 +27,15 @@ def init_logger(log_name, log_path=None):
 def init_directories(*dirs):
     for dir in dirs:
         Path(dir).mkdir(parents=True, exist_ok=True)
+
+def write_pkl(p, dst):
+    with open(dst, 'wb') as f:
+        pickle.dump(p, f)
+
+def read_pkl(file):
+    try:
+        with open(file, 'rb') as p:
+            return pickle.load(p)
+    except Exception as e:
+        print(f'Error while reading {file}: {e}')
+        raise e

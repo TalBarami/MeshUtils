@@ -9,8 +9,8 @@ from torch.utils.data import Dataset, DataLoader
 from amass.data.prepare_data import prepare_amass
 from scipy.spatial.transform import Rotation
 
-from utility.constants import Defaults, DataPaths, Splits
-from utility.utils import init_logger
+from mesh_utils.utility.constants import Defaults, DataPaths, Splits
+from mesh_utils.utility.utils import init_logger
 
 data_logger = init_logger('data_logger', log_path=r'/mnt/DS_SHARED/users/talb/projects/3d_avatar_generation')
 
